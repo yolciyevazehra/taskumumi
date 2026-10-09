@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>1-ci Bölmə</h1>
+    <h2>Tapşırıq 1:</h2>
+    <input type="text" id="yas" placeholder="Age">
+    <input type="text" id="ceki" placeholder="Weight">
+    <button onclick="cevir()">Ok</button>
+    <p id="p"></p>
+
+
+    <h2>Tapşırıq 9</h2>
+    <input type="number" id="m">
+    <button onclick="show()">Ok</button>
+    <h4 id="n"></h4>
+
+    <h2>Tapşırıq 12</h2>
+    <input type="text" id="saat">
+    <p id="cvb"></p>
+
+    <script>
+        let yas = document.getElementById('yas')
+        let ceki = document.getElementById('ceki')
+        let p = document.getElementById('p')
+
+        function cevir() {
+            let a = +yas.value + +ceki.value
+            return p.innerHTML = a + ',' + typeof (a)
+        }
+
+        //tapsiriq 2
+        let b = 150
+        console.log(String(b))
+
+        //tapsiriq 3 daha cox sifahi suala benzeyir ona gore cavabi bele yazacam
+        //0,"",null,undefined false olur qalan digerleri true
+
+        //tapsiriq 4 "5"-2=3 "5"+2=52 biri string biri number olanda -,/,%,* bunlari hesablayir
+        //Amma + olanda cavab string kimi goturulur ve stringle number-i calayir
+
+        //tapsiriq 5 isNaN() reqem deyilse true cixardir cavabi amma reqemdirse false cixir
+
+        //tapsiriq 6
+        let c = "123.45px"
+        let number = parseFloat(c)
+        let netice = number + 10
+        console.log(netice)
+
+        //tapsiriq 7 let=a ve let b = null yazdiqda deyer undefined olacaq amma typeof ile yoxladida a undefined b ise object cixacaq
+
+        //tapsiriq 8
+        let ad = "Elmir"
+        let age = 22
+        let mesaj = `Salam, mənim adım ${ad} və mənim ${age} yaşım var.`
+        console.log(mesaj)
+
+        let m = document.getElementById('m')
+        let n = document.getElementById('n')
+
+        function show() {
+            if (m.value < 50 && m.value >= 0) {
+                n.innerHTML = 'kesilmisen'
+            }
+            else if (m.value < 0) {
+                n.innerHTML = 'yanlis deyer'
+            }
+            else if (m.value == 50) {
+                n.innerHTML = 'bir daha sina'
+            }
+            else if (m.value > 50 && m.value < 80) {
+                n.innerHTML = 'yaxsi'
+            }
+            else {
+                n.innerHTML = 'ela'
+            }
+        }
+
+        // task 10
+        let r1 = 15
+        let r2 = 42
+        let r3 = 28
+        let boyuk
+        if (r1 >= r2 && r1 >= r3) {
+            boyuk = a
+        } else if (r2 >= r1 && r2 >= r3) {
+            boyuk = r2
+        } else {
+            boyuk = r3
+        }
+        console.log("Ən böyük ədəd:", boyuk);
+
+        //task 11 a % 2 == 0 olarsa cut olmasa tek eded
+        let saat = document.getElementById('saat')
+        let cvb = document.getElementById('cvb')
+
+        let hour = saat.value.replace(/:/, "")
+        if (hour <= 1200) {
+            cvb.innerHTML = "Sabahiniz xeyir"
+        }
+        else if (hour <= 1800) {
+            cvb.innerHTML = "Gunortaniz xeyur"
+        }
+        else if (hour <= 2400) {
+            cvb.innerHTML = "Axsaminiz xeyir"
+        } else {
+            cvb.innerHTML = "Saati duzgun qeyd edin"
+        }
+
+        // 13,14 asan idi
+
+        // task 15
+        let gununnomresi = 3
+        let gununadi
+        switch (gununnomresi) {
+            case 1:
+                gununadi = "Bazar ertəsi"
+                break
+            case 2:
+                gununadi = "Çərşənbə axşamı"
+                break
+            case 3:
+                gununadi = "Çərşənbə"
+                break
+            case 4:
+                gununadi = "Cümə axşamı"
+                break
+            case 5:
+                gununadi = "Cümə"
+                break
+            case 6:
+                gununadi = "Şənbə"
+                break
+            case 7:
+                gununadi = "Bazar"
+                break
+            default:
+                gununadi = "Zəhmət olmasa 1 ilə 7 arasında düzgün rəqəm daxil edin."
+        }
+        console.log(gununadi)
+    </script>
+</body>
+
+</html>
